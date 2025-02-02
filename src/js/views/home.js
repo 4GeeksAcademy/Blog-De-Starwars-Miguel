@@ -1,15 +1,85 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext } from "react";
 import "../../styles/home.css";
+import CardPeople from "../component/CardPeople.jsx";
+import { Context } from "../store/appContext";
+import CardPLanet from "../component/CardPlanet.jsx";
+import CardVehicle from "../component/CardVehicle.jsx";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+
+export const Home = () => {
+
+	const {store} = useContext(Context);
+
+
+
+	return(
+		<>
+		
+		<main className="starWarsBlog">
+			
+			<h1 className="m-3 text-danger">Characters</h1>
+			<section className="starWarsPeople col-12 ">
+				
+
+				{
+					store.people.map((personaje,index)=>{
+						
+						
+						return(
+
+							<CardPeople personUrl = {personaje.url} uid={personaje.uid} index={index}></CardPeople>
+						)
+					})
+
+				}
+
+			</section>
+			
+			<h1 className="m-3 text-danger">Planets</h1>
+			<section className="starWarsPlanets col-12 mt-3">
+
+				{
+					store.planets.map((planeta,index)=>{
+
+						return(
+
+							<CardPLanet planetUrl = {planeta.url} uid ={planeta.uid} index={index}/>
+
+						)
+					})
+
+
+				}
+
+			</section>
+
+			<h1 className="m-3 text-danger">Vehicles</h1>
+			<section className="starWarsVehicles row mt-3 flex-nowrap">
+
+				{
+					store.vehicles.map((vehiculo,index)=>{
+
+						return(
+
+							<CardVehicle vehicleUrl = {vehiculo.url} uid={vehiculo.uid} index={index}></CardVehicle>
+						)
+
+					})
+
+				}
+
+			</section>
+
+		</main>
+			
+			
+		
+		
+		</>
+	)
+}
+
+
+
+	
+;

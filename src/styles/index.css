@@ -1,3 +1,37 @@
 /* 
     General Styles
 */
+#iconoStarWars{
+
+    width: 100px;
+
+
+}
+
+#imgCard{
+
+
+    width: 500px;
+}
+
+.starWarsBlog{
+
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.starWarsPeople,.starWarsPlanets,.starWarsVehicles{
+
+    width: 90vw;
+    display: flex;
+    overflow-x: auto;
+    gap: 25px;
+
+}
+
+.img-cartas{
+
+    width: 100%;
+    height: 100%;
+
+}

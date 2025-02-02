@@ -9,6 +9,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import VistaPeople from "./views/VistaPeople.jsx";
+import VistaPlanet from "./views/VistaPlanet.jsx";
+import VistaVehicle from "./views/VistaVehicle.jsx";
 
 //create your first component
 const Layout = () => {
@@ -26,6 +29,9 @@ const Layout = () => {
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/VistaPeople" element={<VistaPeople/>}/>
+						<Route path="/VistaPlanet" element={<VistaPlanet/>}/>
+						<Route path="/VistaVehicle" element={<VistaVehicle/>}/>
 					</Routes>
 					<Footer />
 				</ScrollToTop>
